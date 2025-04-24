@@ -1,31 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
+
+import { formJson } from './multiStepFrom'; 
 import styles from "./MultiStepFrom.module.css";
+
 
 // MultiStepForm Component
 export const MultiStepForm = () => {
-  const [formData, setFormData] = useState({
-    personalInfo: {
-      Name: "",
-      Email: "",
-      phoneNumber: "",
-    },
-    address: {
-      street: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: "",
-    },
-    payment: {
-      cardNumber: "",
-      expiryDate: "",
-      cvv: "",
-      billingAddress: "",
-    },
-    Review: {
-      password:"",
-      confirmPassword: "",
-      checkbox: true,
-    },
-  });
+  const [formData, setFormData] = useState(formJson);
+
+  useEffect(() => {
+
+  }, []);
+
+  return (
+    <>
+    </>
+  )
 };
