@@ -9,23 +9,32 @@ export const Throttle = (fn, timer) => {
       resolve(fn(...args));
 
       setTimeout(() => {
-        console.log('now throttle can run')
+        console.log("now throttle can run");
         isThrottled = false;
       }, timer);
     });
   };
-}
+};
 
 export const debounce = (fn, timer) => {
   let timerRef;
 
   return function (...args) {
     return new Promise((resolve, reject) => {
-      clearTimeout(timerRef)
+      clearTimeout(timerRef);
 
       timerRef = setTimeout(() => {
-        resolve(fn(...args))
+        resolve(fn(...args));
       }, timer);
     });
   };
-}
+};
+
+export const validationPatterns = {
+  name: /^[a-zA-Z ]+$/,
+  email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+  password:
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+  zip: /^[0-9]{5}(?:-[0-9]{4})?$/,
+  phone: /^\+?[1-9]\d{1,14}$/,
+};

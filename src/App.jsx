@@ -4,6 +4,7 @@ import { TicTacToe } from "./Components/TicTacToe";
 import { Throttle, debounce } from "./utils/utils";
 import { ToastComp } from "./Components/Toast";
 import { Counter } from "./Components/Counter";
+import { MultiStepForm } from "./Components/MultiStepForm";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <MultiStepForm />
       <Counter />
       <ToastComp />
       <TicTacToe />
