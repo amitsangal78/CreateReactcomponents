@@ -5,6 +5,7 @@ import { Throttle, debounce } from "./utils/utils";
 import { ToastComp } from "./Components/Toast";
 import { Counter } from "./Components/Counter";
 import { MultiStepForm } from "./Components/MultiStepForm";
+import { List } from "./Components/Crud";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <>
+      <List />
       <MultiStepForm />
       <Counter />
       <ToastComp />
