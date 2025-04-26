@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { formJson } from "./multiStepFrom";
+import { formJson as formJsonRef } from "./multiStepFrom";
 import styles from "./MultiStepForm.module.css";
 import { validationPatterns } from "../../utils/utils";
 
 // MultiStepForm Component
-export const MultiStepForm = () => {
+const MultiStepForm = ({ formJson = {} }) => {
   const [formData, setFormData] = useState({});
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState({});
@@ -149,11 +149,18 @@ export const MultiStepForm = () => {
           {currentStep > 1 && (
             <button onClick={() => handleBack()}>Back</button>
           )}
-          {currentStep <= formJson?.form.length && (
+          {currentStep < formJson?.form.length && (
             <button onClick={() => handleNext()}>Next</button>
+          )}
+          {currentStep === formJson?.form.length && (
+            <button onClick={() => handleNext()}>Submit</button>
           )}
         </div>
       </div>
     </>
   );
+};
+
+export const MultiStepFormWrapper = () => {
+  return <MultiStepForm formJsonRef={formJsonRef} />;
 };

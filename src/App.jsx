@@ -7,6 +7,9 @@ import { Counter } from "./Components/Counter";
 import { MultiStepForm } from "./Components/MultiStepForm";
 import { List } from "./Components/Crud";
 
+// Form elements
+import MultiSelectUsage from "./FormElementUsage/useMultiSelect";
+
 function App() {
   const [inputText, setInputText] = useState("");
 
@@ -31,6 +34,8 @@ function App() {
 
   return (
     <>
+      <MultiSelectUsage />
+
       <List />
       <MultiStepForm />
       <Counter />
