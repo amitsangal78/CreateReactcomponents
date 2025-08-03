@@ -3,37 +3,37 @@ import styles from "./counter.module.css";
 
 // Counter Component
 export const Counter = () => {
-  const [counter, setCounter] = useState(10);
+  const [counter, setCounter] = useState(30);
   const counterRef = useRef(null);
 
   useEffect(() => {
-    if(counter === 0){
+    if (counter === 0) {
       invalidateInterval();
       setCounter(10);
     }
-  }, [counter])
+  }, [counter]);
 
   const invalidateInterval = () => {
-    if(counterRef.current){
+    if (counterRef.current) {
       clearInterval(counterRef.current);
     }
-  }
+  };
   const reset = () => {
     invalidateInterval();
     setCounter(10);
-  }
+  };
   const resume = () => {
     invalidateInterval();
     counterRef.current = setInterval(() => {
-      setCounter((counter) => counter - 1)
-    }, 1000)
-  }
+      setCounter((counter) => counter - 1);
+    }, 1000);
+  };
   const start = () => {
-    resume()
-  }
+    resume();
+  };
   const stop = () => {
-    invalidateInterval()
-  }
+    invalidateInterval();
+  };
 
   return (
     <>
