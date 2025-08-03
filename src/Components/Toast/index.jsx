@@ -13,7 +13,7 @@ export const ToastComp = () => {
 
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
-    }, 2000);
+    }, 5000);
   };
 
   const removeToast = (id) => {

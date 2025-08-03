@@ -4,8 +4,15 @@ import { TicTacToe } from "./Components/TicTacToe";
 import { Throttle, debounce } from "./utils/utils";
 import { ToastComp } from "./Components/Toast";
 import { Counter } from "./Components/Counter";
-import { MultiStepForm } from "./Components/MultiStepForm";
+// import { MultiStepForm } from "./Components/MultiStepForm";
 import { List } from "./Components/Crud";
+import TogglePassword from "./Components/TogglePassword";
+import GuessTheNumber from "./Components/GuessNumber";
+import ProgressBar from "./Components/ProgressBar";
+import ThemeToggle from "./Components/ThemeToggle";
+import Sidebar from "./Components/SideMenu";
+import EvenOrOddChecker from "./Components/EvenOrOddChecker";
+import LoadingSkeleton from "./Components/ShimmerUi";
 
 // Form elements
 import MultiSelectUsage from "./FormElementUsage/useMultiSelect";
@@ -34,11 +41,19 @@ function App() {
 
   return (
     <>
+      <Sidebar />
+
+      <LoadingSkeleton />
+      <EvenOrOddChecker />
+      <ThemeToggle />
+      <ProgressBar />
+      <GuessTheNumber />
+      <TogglePassword />
+      <Counter />
       <MultiSelectUsage />
 
       <List />
-      <MultiStepForm />
-      <Counter />
+      {/* <MultiStepForm /> */}
       <ToastComp />
       <TicTacToe />
       <StringTransformers />
